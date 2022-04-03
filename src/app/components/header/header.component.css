@@ -1,0 +1,15 @@
+.nav-link{
+  font-size: 2em !important;
+}
+
+.parent {
+  display: flex;
+  justify-content: space-between;
+}
+
+.child {
+  margin-left: 27%;
+}
+.nav-item{
+  margin-right: 3em;
+}
