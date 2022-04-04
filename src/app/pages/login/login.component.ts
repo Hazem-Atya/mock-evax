@@ -17,17 +17,12 @@ export class LoginComponent implements OnInit {
     private router: Router){}
 
   ngOnInit(): void {
-    this.toastr.info("Welcome Hazem!")
+    if(this.userService.isLoggedIn())
+    this.router.navigate(['/my-infos']);
   }
 
   login(loginForm: NgForm) {
     console.log(loginForm.value)
-    if (this.userService.login(loginForm.value)) {
-      localStorage.setItem("user", loginForm.value);
-      this.router.navigate(['/my-infos'])
-    } else {
-      this.toastr.error("Please verify your credentials");
-
-    }
+  this.userService.login(loginForm.value);
   }
 }

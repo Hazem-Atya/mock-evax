@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {RegisteredPeople, VaccinaedPeople, VaccinatedChildren, VaccinatedMaleAduls} from "../../utils/data";
+import {RegisteredPeople, VaccinaedPeople, VaccinatedChildren, VaccinatedMaleAdults} from "../../utils/data";
 
 @Component({
   selector: 'app-pie-chart',
@@ -16,7 +16,7 @@ export class PieChartComponent implements OnInit {
 
   chartType = 'pie';
   vaccinatedPeople = VaccinaedPeople.reduce((partialSum, a) => partialSum + a, 0);
-  vaccinatedMales = VaccinatedMaleAduls.reduce((partialSum, a) => partialSum + a, 0);
+  vaccinatedMales = VaccinatedMaleAdults.reduce((partialSum, a) => partialSum + a, 0);
   vaccinatedChildren = VaccinatedChildren.reduce((partialSum, a) => partialSum + a, 0);
   vaccinatedFemales = this.vaccinatedPeople - this.vaccinatedChildren - this.vaccinatedMales;
   chartDatasets = [

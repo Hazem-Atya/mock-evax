@@ -31,6 +31,7 @@ import {RegisterComponent} from './pages/register/register.component';
 import {NotFoundComponent} from './pages/not-found/not-found.component';
 import {FormsModule} from "@angular/forms";
 import {ToastrModule} from "ngx-toastr";
+import { EditUserComponent } from './pages/edit-user/edit-user.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import {ToastrModule} from "ngx-toastr";
     UserInfosComponent,
     LoginComponent,
     RegisterComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    EditUserComponent
   ],
   imports: [
     BrowserModule,

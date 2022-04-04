@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {UserService} from "../../services/user.service";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-header',
@@ -9,7 +10,8 @@ import {UserService} from "../../services/user.service";
 export class HeaderComponent implements OnInit {
 
   constructor(
-    public userService: UserService
+    public userService: UserService,
+    private tostr: ToastrService
   ) { }
 
   ngOnInit(): void {
@@ -20,5 +22,6 @@ export class HeaderComponent implements OnInit {
 
   logout() {
     this.userService.logout();
+    this.tostr.info("See you soon!")
   }
 }

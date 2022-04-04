@@ -62,7 +62,27 @@
                       </select>
                     </div>
                   </div>
-
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-map-marker-alt fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <select   ngModel name="governorate"
+                              class="custom-select">
+                        <option  value="1" disabled>Select your governorate</option>
+                        <option  *ngFor="let el of governorates" value="{{el}}">{{el}}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-sort-numeric-up fa-lg me-3 fa-fw "></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="number" id="form3Example3c"
+                             ngModel
+                             required
+                             name="age"
+                             placeholder="Age"
+                             class="form-control"/>
+                    </div>
+                  </div>
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-ambulance fa-lg me-3 fa-fw "></i>
                     <div class="form-outline flex-fill mb-0">

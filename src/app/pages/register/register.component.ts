@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {NgForm} from "@angular/forms";
-import {UsersDB} from "../../utils/data";
+import {Governorates, UsersDB} from "../../utils/data";
 import {lastIndexOfId} from "../../utils/user";
 import {UserService} from "../../services/user.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-register',
@@ -13,13 +14,15 @@ export class RegisterComponent implements OnInit {
 
   maleSelected = true;
   femaleSelected = false;
-
+  governorates=Governorates;
   constructor(
-    private userService: UserService
-  ) {
-  }
+    private userService: UserService,
+    private router: Router){}
+
 
   ngOnInit(): void {
+    if(this.userService.isLoggedIn())
+      this.router.navigate(['/my-infos']);
   }
 
   printSex(select: HTMLSelectElement) {

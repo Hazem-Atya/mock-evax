@@ -1,8 +1,15 @@
-<div class="p-5 text-center ">
+<div *ngIf="!this.userService.isLoggedIn()"class="p-5 text-center ">
   <h1 class="mb-3">Do you care about your relatives?</h1>
   <h4 class="mb-3">Save them by taking the vaccine</h4>
   <a class="btn btn-success" [routerLink]="['/register']" L role="button">Register now</a>
 </div>
+<div  *ngIf="this.userService.isLoggedIn()" class="p-5 text-center ">
+  <h1 class="mb-3">Welcome {{user?.fullName}}</h1>
+  <h4 class="mb-3">You can now view or edit your personal infos</h4>
+  <a class="btn btn-primary" [routerLink]="['/my-infos']" L role="button">View my infos</a>
+</div>
+
+
 
   <div class="row">
     <app-vaccination></app-vaccination>

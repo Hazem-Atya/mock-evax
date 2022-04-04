@@ -1,106 +1,63 @@
+<div class="container">
+  <div class="row" >
+    <h3 class="alert alert-info ">
+      Welcome {{user.fullName}}, click <a [routerLink]="['/edit-infos']" ><b>here</b></a> to edit your infos.
+    </h3>
 
-<!-- End -->
-
-<!-- Sidenav -->
-<div class="sidenav">
-  <div class="profile">
-    <img src="https://imdezcode.files.wordpress.com/2020/02/imdezcode-logo.png" alt="" width="100" height="100">
-
-    <div class="name">
-      ImDezCode
-    </div>
-    <div class="job">
-      Web Developer
-    </div>
   </div>
+  <table class="table table-striped">
 
-  <div class="sidenav-url">
-    <div class="url">
-      <a href="#profile" class="active">Profile</a>
-      <hr align="center">
-    </div>
-    <div class="url">
-      <a href="#settings">Settings</a>
-      <hr align="center">
-    </div>
-  </div>
-</div>
-<!-- End -->
+    <tbody>
+    <tr>
+      <th scope="row">Id</th>
+      <td>{{user.id}}</td>
+    </tr>
+    <tr>
+      <th scope="row">Full name</th>
+      <td>{{user.fullName}}</td>
+    </tr>
+    <tr>
+      <th scope="row">Email</th>
+      <td>{{user.email}}</td>
+    </tr>
+    <tr>
+      <th scope="row">Sex</th>
+      <td>{{user.sex}}</td>
+    </tr>
+      <tr>
+      <th scope="row">Cin number</th>
+      <td>{{user.cin}}</td>
+    </tr>
+    <tr>
+      <th scope="row">Age</th>
+      <td>{{user.age}}</td>
+    </tr>
+     <tr>
+      <th scope="row">Governorate</th>
+      <td>{{user.governorate}}</td>
+    </tr>
+    <tr>
+      <th scope="row">Previous or current diseases</th>
+      <td>{{user.previousDiseases}}</td>
+    </tr>
+    <tr>
+      <th scope="row">Got vaccinated</th>
+      <td *ngIf="user.vaccinDetails.vaccinated">
+        YES, you got your vaccine on {{user.vaccinDetails.dateOfVaccination|date}}
+      </td>
+      <td *ngIf="!user.vaccinDetails.vaccinated">
+        You did not got your vaccine, Please visit the nearest vaccine center
+      </td>
+    </tr>
+    <tr *ngIf="user.vaccinDetails.vaccinated">
+      <th scope="row">Vaccine name</th>
+      <td >
+        {{user.vaccinDetails.vaccinName}}
+      </td>
 
-<!-- Main -->
-<div class="main">
-  <h2>IDENTITY</h2>
-  <div class="card">
-    <div class="card-body">
-      <i class="fa fa-pen fa-xs edit"></i>
-      <table>
-        <tbody>
-        <tr>
-          <td>Name</td>
-          <td>:</td>
-          <td>ImDezCode</td>
-        </tr>
-        <tr>
-          <td>Email</td>
-          <td>:</td>
-          <td>imdezcode@gmail.com</td>
-        </tr>
-        <tr>
-          <td>Address</td>
-          <td>:</td>
-          <td>Bali, Indonesia</td>
-        </tr>
-        <tr>
-          <td>Hobbies</td>
-          <td>:</td>
-          <td>Diving, Reading Book</td>
-        </tr>
-        <tr>
-          <td>Job</td>
-          <td>:</td>
-          <td>Web Developer</td>
-        </tr>
-        <tr>
-          <td>Skill</td>
-          <td>:</td>
-          <td>PHP, HTML, CSS, Java</td>
-        </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
+    </tr>
 
-  <h2>SOCIAL MEDIA</h2>
-  <div class="card">
-    <div class="card-body">
-      <i class="fa fa-pen fa-xs edit"></i>
-      <div class="social-media">
-                    <span class="fa-stack fa-sm">
-                        <i class="fas fa-circle fa-stack-2x"></i>
-                        <i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
-                    </span>
-        <span class="fa-stack fa-sm">
-                        <i class="fas fa-circle fa-stack-2x"></i>
-                        <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
-                    </span>
-        <span class="fa-stack fa-sm">
-                        <i class="fas fa-circle fa-stack-2x"></i>
-                        <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
-                    </span>
-        <span class="fa-stack fa-sm">
-                        <i class="fas fa-circle fa-stack-2x"></i>
-                        <i class="fab fa-invision fa-stack-1x fa-inverse"></i>
-                    </span>
-        <span class="fa-stack fa-sm">
-                        <i class="fas fa-circle fa-stack-2x"></i>
-                        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-                    </span>
-        <span class="fa-stack fa-sm">
-                        <i class="fas fa-circle fa-stack-2x"></i>
-                        <i class="fab fa-whatsapp fa-stack-1x fa-inverse"></i>
-                    </span>
+    </tbody>
+  </table>
 
-      </div>
-    </div>
-  </div>
 </div>

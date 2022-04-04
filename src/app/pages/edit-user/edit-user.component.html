@@ -1,0 +1,107 @@
+<div class="container">
+
+  <div class="row">
+    <h3 (click)="editUser()" class="alert alert-primary ">
+      <a>
+        <u>
+          Click here to save your updates
+        </u>
+      </a>
+    </h3>
+  </div>
+  <table class="table table-striped">
+
+    <tbody>
+    <tr>
+      <th scope="row">Id</th>
+      <td>
+        {{user.id}}
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Full name</th>
+      <td>
+        <input
+          [(ngModel)]="user.fullName"
+          class="form-control" type="text">
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Email</th>
+      <td>
+
+        {{user.email}}
+
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Sex</th>
+      <td>
+        <select
+          [(ngModel)]="user.sex"
+
+          name="sex" required #select name="sex"
+          class="custom-select">
+          <option value="1" disabled>Select your sex</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Cin number</th>
+      <td>
+        <input
+          [(ngModel)]="user.cin"
+
+          class="form-control" type="text">
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Age</th>
+      <td>
+        <input
+          [(ngModel)]="user.age"
+          class="form-control" type="text">
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Governorate</th>
+      <td>
+        <select
+          [(ngModel)]="user.governorate"
+          class="custom-select">
+          <option value="1" disabled>Select your governorate</option>
+          <option [selected]="el==user.governorate" *ngFor="let el of governorates" value="{{el}}">{{el}}</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Previous or current diseases</th>
+      <td>
+        <input
+          [(ngModel)]="user.previousDiseases"
+          class="form-control" type="text">
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Got vaccinated</th>
+      <td *ngIf="user.vaccinDetails.vaccinated">
+        YES, you got your vaccine on {{user.vaccinDetails.dateOfVaccination|date}}
+      </td>
+      <td *ngIf="!user.vaccinDetails.vaccinated">
+        You did not got your vaccine, Please visit the nearest vaccine center
+      </td>
+    </tr>
+    <tr *ngIf="user.vaccinDetails.vaccinated">
+      <th scope="row">Vaccine name</th>
+      <td>
+        {{user.vaccinDetails.vaccinName}}
+      </td>
+
+    </tr>
+
+    </tbody>
+  </table>
+
+</div>
